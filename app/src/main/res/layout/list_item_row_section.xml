@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="section"
+            type="String" />
+    </data>
+
+    <TextView
+        android:id="@+id/tvSectionHeader"
+        style="@style/App.Theme.TextAppearance.Medium.Bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/card_padding"
+        android:text="@{section}"
+        android:textAllCaps="true"
+        tools:text="Matches" />
+</layout>

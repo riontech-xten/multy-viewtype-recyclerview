@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="App.Theme.TextAppearance.Bold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif-black</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.Regular" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.Small.Bold" parent="App.Theme.TextAppearance.Bold">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.Medium.Bold" parent="App.Theme.TextAppearance.Bold">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.Large.Bold" parent="App.Theme.TextAppearance.Bold">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.Medium.Regular" parent="App.Theme.TextAppearance.Regular">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.Small.Regular" parent="App.Theme.TextAppearance.Regular">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.Medium.Light" parent="App.Theme.TextAppearance.Medium.Regular">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+</resources>
