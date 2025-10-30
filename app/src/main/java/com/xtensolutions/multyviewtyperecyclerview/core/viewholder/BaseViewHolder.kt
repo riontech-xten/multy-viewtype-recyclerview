@@ -17,6 +17,7 @@ abstract class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
         fun onViewHolderViewClicked(view: View?, position: Int)
     }
 
+    @SuppressWarnings
     fun setViewClickListener(holderClickObserver: ViewHolderClickListener) {
         this.viewHolderClickListener = holderClickObserver
     }

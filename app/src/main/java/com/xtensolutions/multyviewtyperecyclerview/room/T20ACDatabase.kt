@@ -85,7 +85,7 @@ abstract class T20ACDatabase : RoomDatabase() {
                 .build()
         }
 
-        private suspend fun clearAllTablesInTransaction(db: SupportSQLiteDatabase) {
+        private fun clearAllTablesInTransaction(db: SupportSQLiteDatabase) {
             db.execSQL("DELETE FROM `match`")
             db.execSQL("DELETE FROM `group`")
             db.execSQL("DELETE FROM `match_result`")

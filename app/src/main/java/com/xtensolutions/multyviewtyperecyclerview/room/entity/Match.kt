@@ -2,12 +2,11 @@ package com.xtensolutions.multyviewtyperecyclerview.room.entity
 
 import android.os.Parcelable
 import androidx.room.Entity
-import androidx.room.Ignore
 import androidx.room.PrimaryKey
-import com.xtensolutions.multyviewtyperecyclerview.annotations.IgnoreDetekt
 import com.xtensolutions.multyviewtyperecyclerview.core.listener.ListItemHeaderSection
 import kotlinx.parcelize.Parcelize
 import java.text.SimpleDateFormat
+import java.util.Locale
 
 /**
  * Created by Vaghela Mithun R. on 04-10-2025 - 16:31.
@@ -34,9 +33,9 @@ open class Match(
     override fun isHeader(): Boolean = false
 
     fun matchDateTime(): String {
-        val sdf = SimpleDateFormat("yyyy-MM-dd")
+        val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
         val date = sdf.parse(matchDate)
-        val outputSdf = SimpleDateFormat("EEE, dd MMM ''yy")
+        val outputSdf = SimpleDateFormat("EEE, dd MMM ''yy", Locale.ENGLISH)
         return outputSdf.format(date!!)
     }
 

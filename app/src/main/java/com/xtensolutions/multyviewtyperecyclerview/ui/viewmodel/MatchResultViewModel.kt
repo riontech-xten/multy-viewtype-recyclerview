@@ -1,12 +1,9 @@
 package com.xtensolutions.multyviewtyperecyclerview.ui.viewmodel
 
-import androidx.lifecycle.LiveData
-import com.xtensolutions.multyviewtyperecyclerview.core.viewmodel.BaseViewModel
-import com.xtensolutions.multyviewtyperecyclerview.domain.MatchResultRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
 import androidx.lifecycle.asLiveData
 import com.xtensolutions.multyviewtyperecyclerview.core.listener.ListItemHeaderSection
-import com.xtensolutions.multyviewtyperecyclerview.core.state.Result
+import com.xtensolutions.multyviewtyperecyclerview.core.viewmodel.BaseViewModel
+import com.xtensolutions.multyviewtyperecyclerview.domain.MatchResultRepository
 import com.xtensolutions.multyviewtyperecyclerview.domain.TeamRepository
 import com.xtensolutions.multyviewtyperecyclerview.model.ListSection
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group
@@ -15,7 +12,7 @@ import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group.Companion.G
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group.Companion.GroupType.SUPER_FOURS
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.GroupTeamPoints
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.MatchResult
-import com.xtensolutions.multyviewtyperecyclerview.room.entity.Team
+import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.LinkedList
 import javax.inject.Inject
 

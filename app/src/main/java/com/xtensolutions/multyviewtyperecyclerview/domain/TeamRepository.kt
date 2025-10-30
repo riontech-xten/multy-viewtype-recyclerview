@@ -1,6 +1,5 @@
 package com.xtensolutions.multyviewtyperecyclerview.domain
 
-import com.xtensolutions.multyviewtyperecyclerview.room.dao.TeamDao
 import com.xtensolutions.multyviewtyperecyclerview.room.dao.TeamPointTableDao
 import javax.inject.Inject
 

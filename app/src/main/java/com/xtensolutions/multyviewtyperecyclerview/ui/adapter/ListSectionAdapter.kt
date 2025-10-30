@@ -20,7 +20,7 @@ import java.util.LinkedList
  * This adapter extends [com.xtensolutions.multyviewtyperecyclerview.core.adapter.ListItemHeaderSectionAdapter]
  * to handle common header sections.
  * @param context The context in which the adapter is created.
- * @param objectsList The list of items to be displayed, which should include instances of [CommonHeaderSection].
+ * @param objectsList The list of items to be displayed, which should include instances of [ListSectionAdapter].
  */
 open class ListSectionAdapter<I : ListItemHeaderSection>(
     context: Context, objectsList: LinkedList<I>
