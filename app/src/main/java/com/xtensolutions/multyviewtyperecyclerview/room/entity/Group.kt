@@ -22,10 +22,17 @@ data class Group(
     override fun isHeader(): Boolean = false
 
     companion object {
+        @Suppress("detekt.MagicNumber")
+        enum class GroupType(val id: Int, val value: String) {
+            GROUP_A(1, "Group A"),
+            GROUP_B(2, "Group B"),
+            SUPER_FOURS(3, "Super Fours")
+        }
+
         fun generateData() = arrayListOf<Group>().apply {
-            add(Group(groupId = 1, groupName = "Group A"))
-            add(Group(groupId = 2, groupName = "Group B"))
-            add(Group(groupId = 3, groupName = "Super Fours"))
+            add(Group(groupId = GroupType.GROUP_A.id, groupName = GroupType.GROUP_A.value))
+            add(Group(groupId = GroupType.GROUP_B.id, groupName = GroupType.GROUP_B.value))
+            add(Group(groupId = GroupType.SUPER_FOURS.id, groupName = GroupType.SUPER_FOURS.value))
         }
     }
 }

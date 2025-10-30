@@ -9,8 +9,6 @@ import javax.inject.Inject
  * Email : vaghela.mithun@gmail.com
  * Mob   : +919727206702
  **/
-class TeamRepository @Inject constructor(private val teamDao: TeamDao, private val teamPointTableDao: TeamPointTableDao) {
-    suspend fun getAllTeams() = teamDao.fetchAllTeam()
-
+class TeamRepository @Inject constructor(private val teamPointTableDao: TeamPointTableDao) {
     suspend fun getTeamPointTable() = teamPointTableDao.fetchTeamPointTable()
 }

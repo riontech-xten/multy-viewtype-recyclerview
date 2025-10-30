@@ -9,7 +9,7 @@ appcompat = "1.7.1"
 material = "1.13.0"
 daggerHilt = "2.57.2"
 detekt = "1.23.8"
-ksp = "2.2.10-2.0.2"
+ksp = "2.2.21-2.0.4"
 lifecycle = "2.9.4"
 
 [libraries]
@@ -42,5 +42,5 @@ dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-detekt-plugin = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }

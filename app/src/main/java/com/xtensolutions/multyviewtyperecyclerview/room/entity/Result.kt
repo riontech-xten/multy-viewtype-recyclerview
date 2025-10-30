@@ -29,6 +29,7 @@ data class Result(
     override fun isHeader(): Boolean = false
 
     companion object {
+        @Suppress("detekt.LongMethod")
         fun generateData() = arrayListOf<Result>().apply {
             add(
                 Result(

@@ -10,6 +10,9 @@ import com.xtensolutions.multyviewtyperecyclerview.core.state.Result
 import com.xtensolutions.multyviewtyperecyclerview.domain.TeamRepository
 import com.xtensolutions.multyviewtyperecyclerview.model.ListSection
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group
+import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group.Companion.GroupType.GROUP_A
+import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group.Companion.GroupType.GROUP_B
+import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group.Companion.GroupType.SUPER_FOURS
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.GroupTeamPoints
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.MatchResult
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.Team
@@ -39,15 +42,15 @@ class MatchResultViewModel @Inject constructor(
         return LinkedList<ListItemHeaderSection>().apply {
             add(ListSection("Matches"))
             addAll(matches)
-            val groupSuperFour = teams.filter { it.groupId == 3 }
-            val groupA = teams.filter { it.groupId == 1 }
-            val groupB = teams.filter { it.groupId == 2 }
+            val groupSuperFour = teams.filter { it.groupId == SUPER_FOURS.id }
+            val groupA = teams.filter { it.groupId == GROUP_A.id }
+            val groupB = teams.filter { it.groupId == GROUP_B.id }
             add(ListSection("Groups"))
-            add(Group(groupId = 3, groupName = "Super Fours"))
+            add(Group(groupId = SUPER_FOURS.id, groupName = SUPER_FOURS.value))
             addAll(groupSuperFour)
-            add(Group(groupId = 1, groupName = "Group A"))
+            add(Group(groupId = GROUP_A.id, groupName = GROUP_A.value))
             addAll(groupA)
-            add(Group(groupId = 2, groupName = "Group B"))
+            add(Group(groupId = GROUP_A.id, groupName = GROUP_B.value))
             addAll(groupB)
         }
     }

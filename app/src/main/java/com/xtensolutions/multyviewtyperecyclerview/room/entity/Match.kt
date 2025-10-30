@@ -2,7 +2,9 @@ package com.xtensolutions.multyviewtyperecyclerview.room.entity
 
 import android.os.Parcelable
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import com.xtensolutions.multyviewtyperecyclerview.annotations.IgnoreDetekt
 import com.xtensolutions.multyviewtyperecyclerview.core.listener.ListItemHeaderSection
 import kotlinx.parcelize.Parcelize
 import java.text.SimpleDateFormat
@@ -39,6 +41,7 @@ open class Match(
     }
 
     companion object {
+        @Suppress("detekt.LongMethod")
         fun generateData() = arrayListOf<Match>().apply {
             add(
                 Match(

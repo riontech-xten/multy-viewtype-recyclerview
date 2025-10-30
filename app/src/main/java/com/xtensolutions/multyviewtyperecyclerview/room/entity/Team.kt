@@ -24,6 +24,7 @@ data class Team(
     override fun isHeader(): Boolean = false
 
     companion object {
+        @Suppress("detekt.LongMethod")
         fun generateData() = arrayListOf<Team>().apply {
             // Group A Teams
             add(

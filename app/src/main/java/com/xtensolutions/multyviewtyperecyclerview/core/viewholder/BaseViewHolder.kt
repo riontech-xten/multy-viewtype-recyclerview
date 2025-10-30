@@ -22,14 +22,18 @@ abstract class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView
     }
 
     override fun onSingleClick(v: View) {
-        if (allowInstantClick.not() && ::viewHolderClickListener.isInitialized) viewHolderClickListener.onViewHolderViewClicked(
-            v, adapterPosition
-        )
+        if (allowInstantClick.not() && ::viewHolderClickListener.isInitialized){
+            viewHolderClickListener.onViewHolderViewClicked(
+                v, bindingAdapterPosition
+            )
+        }
     }
 
     override fun instantClick(v: View) {
-        if (allowInstantClick && ::viewHolderClickListener.isInitialized) viewHolderClickListener.onViewHolderViewClicked(
-            v, adapterPosition
-        )
+        if (allowInstantClick && ::viewHolderClickListener.isInitialized) {
+            viewHolderClickListener.onViewHolderViewClicked(
+                v, bindingAdapterPosition
+            )
+        }
     }
 }

@@ -39,7 +39,7 @@ abstract class T20ACDatabase : RoomDatabase() {
 
     companion object {
         const val DATABASE_NAME = "t20_ac_database"
-
+        const val MAX_DELAY = 100L
         // Singleton instance
         @Volatile
         private var INSTANCE: T20ACDatabase? = null
@@ -71,17 +71,13 @@ abstract class T20ACDatabase : RoomDatabase() {
                         // because getInstance assigns INSTANCE after build() returns.
                         CoroutineScope(Dispatchers.IO).launch {
                             // small delay to ensure getInstance() won't rebuild the DB recursively
-                            delay(100)
+                            delay(MAX_DELAY)
                             // Clear tables using raw SQL (defensive) then insert seed data via DAOs.
                             // Use execSQL to clear in case DAOs don't have delete methods.
                             clearAllTablesInTransaction(db)
 
-                            try {
-                                getInstance(appContext).also { database ->
-                                    insertSeedData(database)
-                                }
-                            } catch (e: Exception) {
-                                e.printStackTrace()
+                            getInstance(appContext).also { database ->
+                                insertSeedData(database)
                             }
                         }
                     }

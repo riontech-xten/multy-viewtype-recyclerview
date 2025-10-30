@@ -30,6 +30,7 @@ open class TeamPointTable(
     override fun isHeader(): Boolean = false
 
     companion object {
+        @Suppress("detekt.LongMethod")
         fun generateData() = arrayListOf<TeamPointTable>().apply {
             // Group A Teams
             add(

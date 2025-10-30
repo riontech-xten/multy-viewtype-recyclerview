@@ -1,6 +1,5 @@
 package com.xtensolutions.multyviewtyperecyclerview.ui.binding
 
-import android.graphics.drawable.Icon
 import android.widget.TextView
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.BindingAdapter
@@ -10,13 +9,6 @@ import androidx.databinding.BindingAdapter
  * Email : vaghela.mithun@gmail.com
  * Mob   : +919727206702
  **/
-
-enum class IconPosition {
-    START,
-    END,
-    TOP,
-    BOTTOM
-}
 
 @BindingAdapter("android:resourceIcon", "android:iconPosition", requireAll = true)
 fun bindResourceIcon(textView: TextView, iconResId: Int, iconPosition: IconPosition) {
