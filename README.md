@@ -2,7 +2,6 @@
 
 Date: 24 November 2025
 
-## TL;DR
 A clean, maintainable pattern to display heterogeneous rows (headers, match rows, team rows, group items, etc.) in a single RecyclerView. The MultyViewTypeRecyclerView repo demonstrates a small, extensible model (`ListItem`), layered adapters to map view types to ViewHolders, and ViewModel-level mapping to compose the final list.
 
 ---
