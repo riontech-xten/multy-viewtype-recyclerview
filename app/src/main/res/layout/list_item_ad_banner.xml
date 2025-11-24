@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="banner"
+            type="com.xtensolutions.multyviewtyperecyclerview.model.AdBannerModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="12dp"
+        android:foregroundGravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bannerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{banner.title}"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                tools:text="Super Sale" />
+
+            <TextView
+                android:id="@+id/bannerSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{banner.subtitle}"
+                android:textSize="14sp"
+                tools:text="Up to 50% off" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
