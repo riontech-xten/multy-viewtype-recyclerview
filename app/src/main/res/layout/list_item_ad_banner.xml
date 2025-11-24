@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="banner"
             type="com.xtensolutions.multyviewtyperecyclerview.model.AdBannerModel" />
     </data>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:padding="12dp"
-        android:foregroundGravity="center">
+        android:layout_marginBottom="@dimen/card_padding"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardPreventCornerOverlap="false">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/card_padding">
 
             <TextView
                 android:id="@+id/bannerTitle"
+                style="@style/App.Theme.TextAppearance.Large.Bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{banner.title}"
                 android:textStyle="bold"
-                android:textSize="16sp"
                 tools:text="Super Sale" />
 
             <TextView
                 android:id="@+id/bannerSubtitle"
+                style="@style/App.Theme.TextAppearance.Medium.Regular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{banner.subtitle}"
-                android:textSize="14sp"
                 tools:text="Up to 50% off" />
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>

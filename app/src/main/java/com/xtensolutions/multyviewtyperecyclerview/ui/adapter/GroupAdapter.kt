@@ -3,9 +3,9 @@ package com.xtensolutions.multyviewtyperecyclerview.ui.adapter
 import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.xtensolutions.multyviewtyperecyclerview.core.listener.ListItemHeaderSection
 import com.xtensolutions.multyviewtyperecyclerview.core.viewholder.BaseViewHolder
 import com.xtensolutions.multyviewtyperecyclerview.databinding.ListItemRowGroupBinding
+import com.xtensolutions.multyviewtyperecyclerview.model.ListItem
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group
 import java.util.LinkedList
 
@@ -16,11 +16,11 @@ import java.util.LinkedList
  **/
 open class GroupAdapter(
     context: Context,
-    objectsList: LinkedList<ListItemHeaderSection>
+    objectsList: LinkedList<ListItem>
 ) : TeamAdapter(context, objectsList) {
 
     override fun getItemViewType(position: Int): Int {
-        if (getItem(position) is Group && getItem(position).isHeader().not()) return GROUP_TYPE
+        if (getItem(position) is ListItem.Group<*>) return GROUP_TYPE
         return super.getItemViewType(position)
     }
 
@@ -32,8 +32,8 @@ open class GroupAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is GroupViewHolder && getItem(position) is Group) {
-            holder.bind(getItem(position) as Group)
+        if (holder is GroupViewHolder && getItemViewType(position) == GROUP_TYPE) {
+            holder.bind(getItem(position).data as Group)
         } else super.onBindViewHolder(holder, position)
     }
 
@@ -44,6 +44,6 @@ open class GroupAdapter(
 
 class GroupViewHolder(private val binding: ListItemRowGroupBinding) : BaseViewHolder(binding.root) {
     fun bind(group: Group) {
-         binding.group = group
+        binding.group = group
     }
 }

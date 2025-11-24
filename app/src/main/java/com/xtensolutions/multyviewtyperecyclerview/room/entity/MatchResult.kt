@@ -24,7 +24,7 @@ class MatchResult(
     val teamAFlag: Int,
     val teamBFlag: Int,
     val groupName: String
-) : Match(), Parcelable, ListItemHeaderSection {
+) : Match(), Parcelable {
     override fun isHeader(): Boolean = false
     fun getMatchVenue(): String = "Match $matchId , $groupName, $venue"
     fun getWinnerDetails(): String = "$winnerTeamId won by $winMargin"

@@ -4,10 +4,9 @@ import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.xtensolutions.multyviewtyperecyclerview.core.adapter.ListItemHeaderSectionAdapter
-import com.xtensolutions.multyviewtyperecyclerview.core.listener.ListItemHeaderSection
 import com.xtensolutions.multyviewtyperecyclerview.core.viewholder.BaseViewHolder
 import com.xtensolutions.multyviewtyperecyclerview.databinding.ListItemRowSectionBinding
-import com.xtensolutions.multyviewtyperecyclerview.model.ListSection
+import com.xtensolutions.multyviewtyperecyclerview.model.ListItem
 import java.util.LinkedList
 
 /**
@@ -22,9 +21,9 @@ import java.util.LinkedList
  * @param context The context in which the adapter is created.
  * @param objectsList The list of items to be displayed, which should include instances of [ListSectionAdapter].
  */
-open class ListSectionAdapter<I : ListItemHeaderSection>(
-    context: Context, objectsList: LinkedList<I>
-) : ListItemHeaderSectionAdapter<I>(context, objectsList) {
+open class ListSectionAdapter(
+    context: Context, objectsList: LinkedList<ListItem>
+) : ListItemHeaderSectionAdapter<ListItem>(context, objectsList) {
     /**
      * Creates a new view holder for the common header section.
      * This method is called by the RecyclerView to create a new view holder for the header section.
@@ -48,9 +47,10 @@ open class ListSectionAdapter<I : ListItemHeaderSection>(
      * @param position The position of the item in the adapter.
      */
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is SectionViewHolder && getItemViewType(position) == HEADER && getItem(position).isHeader()) {
-            val headerSection = getItem(position) as ListSection
-            holder.bind(headerSection)
+        if (holder is SectionViewHolder && getItemViewType(position) == HEADER && getItem(position) is ListItem.Section<*>) {
+            val headerSection = getItem(position) as ListItem.Section<*>
+            // use component1() (data class generated accessor) instead of .data to avoid unresolved reference
+            holder.bind(headerSection.component1() as String)
         } else {
             super.bindViewHolder(holder, position)
         }
@@ -66,7 +66,7 @@ open class ListSectionAdapter<I : ListItemHeaderSection>(
 class SectionViewHolder(
     private val binding: ListItemRowSectionBinding
 ) : BaseViewHolder(binding.root) {
-    fun bind(headerSection: ListSection) {
-        binding.section = headerSection.section
+    fun bind(headerSection: String) {
+        binding.section = headerSection
     }
 }

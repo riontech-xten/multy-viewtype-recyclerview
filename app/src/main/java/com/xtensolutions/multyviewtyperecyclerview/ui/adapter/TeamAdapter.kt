@@ -2,11 +2,10 @@ package com.xtensolutions.multyviewtyperecyclerview.ui.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.xtensolutions.multyviewtyperecyclerview.core.listener.ListItemHeaderSection
 import com.xtensolutions.multyviewtyperecyclerview.core.viewholder.BaseViewHolder
 import com.xtensolutions.multyviewtyperecyclerview.databinding.ListItemRowTeamBinding
+import com.xtensolutions.multyviewtyperecyclerview.model.ListItem
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.GroupTeamPoints
-import com.xtensolutions.multyviewtyperecyclerview.room.entity.Team
 import java.util.LinkedList
 
 /**
@@ -16,11 +15,11 @@ import java.util.LinkedList
  **/
 open class TeamAdapter(
     context: android.content.Context,
-    objectsList: LinkedList<ListItemHeaderSection>
-) : ListSectionAdapter<ListItemHeaderSection>(context, objectsList) {
+    objectsList: LinkedList<ListItem>
+) : AdBannerAdapter(context, objectsList) {
 
     override fun getItemViewType(position: Int): Int {
-        if (getItem(position) is GroupTeamPoints && getItem(position).isHeader().not()) return TEAM_TYPE
+        if (getItem(position) is ListItem.Team<*>) return TEAM_TYPE
         return super.getItemViewType(position)
     }
 
@@ -32,8 +31,8 @@ open class TeamAdapter(
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is TeamViewHolder && getItem(position) is GroupTeamPoints) {
-            holder.bind(getItem(position) as GroupTeamPoints)
+        if (holder is TeamViewHolder && getItem(position) is ListItem.Team<*>) {
+            holder.bind(getItem(position).data as GroupTeamPoints)
         } else super.onBindViewHolder(holder, position)
     }
 

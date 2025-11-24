@@ -3,11 +3,9 @@ package com.xtensolutions.multyviewtyperecyclerview.ui.view
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.ajalt.timberkt.Timber
 import com.xtensolutions.multyviewtyperecyclerview.databinding.ActivityMainBinding
-import com.xtensolutions.multyviewtyperecyclerview.ui.adapter.ListSectionAdapter
 import com.xtensolutions.multyviewtyperecyclerview.ui.adapter.MatchAdapter
 import com.xtensolutions.multyviewtyperecyclerview.ui.viewmodel.MatchResultViewModel
 import dagger.hilt.android.AndroidEntryPoint
