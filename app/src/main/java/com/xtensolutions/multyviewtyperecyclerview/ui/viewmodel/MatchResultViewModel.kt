@@ -1,11 +1,11 @@
 package com.xtensolutions.multyviewtyperecyclerview.ui.viewmodel
 
 import androidx.lifecycle.asLiveData
-import com.xtensolutions.multyviewtyperecyclerview.core.listener.ListItemHeaderSection
 import com.xtensolutions.multyviewtyperecyclerview.core.viewmodel.BaseViewModel
 import com.xtensolutions.multyviewtyperecyclerview.domain.MatchResultRepository
 import com.xtensolutions.multyviewtyperecyclerview.domain.TeamRepository
-import com.xtensolutions.multyviewtyperecyclerview.model.ListSection
+import com.xtensolutions.multyviewtyperecyclerview.model.AdBannerModel
+import com.xtensolutions.multyviewtyperecyclerview.model.ListItem
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group.Companion.GroupType.GROUP_A
 import com.xtensolutions.multyviewtyperecyclerview.room.entity.Group.Companion.GroupType.GROUP_B
@@ -35,19 +35,38 @@ class MatchResultViewModel @Inject constructor(
     fun mappingMatchResultWithGroupTeam(
         matches: List<MatchResult>,
         teams: List<GroupTeamPoints>
-    ): LinkedList<ListItemHeaderSection> {
-        return LinkedList<ListItemHeaderSection>().apply {
-            add(ListSection("Matches"))
-            addAll(matches)
-            val groupSuperFour = teams.filter { it.groupId == SUPER_FOURS.id }
-            val groupA = teams.filter { it.groupId == GROUP_A.id }
-            val groupB = teams.filter { it.groupId == GROUP_B.id }
-            add(ListSection("Groups"))
-            add(Group(groupId = SUPER_FOURS.id, groupName = SUPER_FOURS.value))
+    ): LinkedList<ListItem> {
+        return LinkedList<ListItem>().apply {
+            add(ListItem.Section("Matches"))
+            addAll(matches.map { ListItem.Match(it) })
+
+            // Insert a sample AdBanner row between Matches and Groups for demo purposes
+            add(
+                ListItem.AdBanner(
+                    AdBannerModel(
+                        id = "banner_1",
+                        title = "Special Offer",
+                        subtitle = "Get 20% off on tickets",
+                        imageUrl = null
+                    )
+                )
+            )
+
+            val groupSuperFour = teams.filter { it.groupId == SUPER_FOURS.id }.map {
+                ListItem.Team(it)
+            }
+            val groupA = teams.filter { it.groupId == GROUP_A.id }.map {
+                ListItem.Team(it)
+            }
+            val groupB = teams.filter { it.groupId == GROUP_B.id }.map {
+                ListItem.Team(it)
+            }
+            add(ListItem.Section("Groups"))
+            add(ListItem.Group(Group(groupId = SUPER_FOURS.id, groupName = SUPER_FOURS.value)))
             addAll(groupSuperFour)
-            add(Group(groupId = GROUP_A.id, groupName = GROUP_A.value))
+            add(ListItem.Group(Group(groupId = GROUP_A.id, groupName = GROUP_A.value)))
             addAll(groupA)
-            add(Group(groupId = GROUP_A.id, groupName = GROUP_B.value))
+            add(ListItem.Group(Group(groupId = GROUP_A.id, groupName = GROUP_B.value)))
             addAll(groupB)
         }
     }
