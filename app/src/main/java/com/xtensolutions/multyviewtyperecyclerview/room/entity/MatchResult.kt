@@ -2,7 +2,6 @@ package com.xtensolutions.multyviewtyperecyclerview.room.entity
 
 import android.os.Parcelable
 import androidx.room.Entity
-import com.xtensolutions.multyviewtyperecyclerview.core.listener.ListItemHeaderSection
 import kotlinx.parcelize.Parcelize
 
 /**
