@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.xtensolutions.asiacup.presentation.ui.binding.IconPosition" />
+
+        <variable
+            name="team"
+            type="com.xtensolutions.interfacesample.room.entity.GroupTeamPoints" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tlTeamPoints"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:weightSum="10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvTeam"
+            style="@style/App.Theme.TextAppearance.Medium.Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:paddingHorizontal="@dimen/card_padding"
+            android:drawablePadding="@dimen/list_item_margin"
+            android:gravity="center_vertical"
+            android:iconPosition="@{IconPosition.START}"
+            android:resourceIcon="@{team.teamFlagSmall}"
+            android:text="@{team.teamId}"
+            app:layout_constraintWidth_percent="0.4"
+            app:drawableStartCompat="@drawable/flag_ind_40"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvMatchesWon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="IND" />
+
+        <TextView
+            android:id="@+id/tvMatchesPlayed"
+            style="@style/App.Theme.TextAppearance.Medium.Bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:paddingVertical="@dimen/card_padding"
+            app:layout_constraintWidth_percent="0.1"
+            android:text="@{``+team.playedMatches}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvMatchesWon"
+            app:layout_constraintStart_toEndOf="@id/tvTeam"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="M" />
+
+        <TextView
+            android:id="@+id/tvMatchesWon"
+            style="@style/App.Theme.TextAppearance.Medium.Bold"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:paddingVertical="@dimen/card_padding"
+            android:text="@{``+team.wonMatches}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvMatchLost"
+            app:layout_constraintStart_toEndOf="@id/tvMatchesPlayed"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="W" />
+
+        <TextView
+            android:id="@+id/tvMatchLost"
+            style="@style/App.Theme.TextAppearance.Medium.Bold"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:paddingVertical="@dimen/card_padding"
+            android:text="@{``+team.lostMatches}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvPoints"
+            app:layout_constraintStart_toEndOf="@id/tvMatchesWon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="L" />
+
+        <TextView
+            android:id="@+id/tvPoints"
+            style="@style/App.Theme.TextAppearance.Medium.Bold"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="@dimen/card_padding"
+            android:text="@{``+team.points}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvNetRunRate"
+            app:layout_constraintStart_toEndOf="@id/tvMatchLost"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Pts" />
+
+        <TextView
+            android:id="@+id/tvNetRunRate"
+            style="@style/App.Theme.TextAppearance.Medium.Bold"
+            android:layout_width="0dp"
+            app:layout_constraintWidth_percent="0.2"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:paddingVertical="@dimen/card_padding"
+            android:text='@{String.format("%.3f", team.netRunRate)}'
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvPoints"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="NRR" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

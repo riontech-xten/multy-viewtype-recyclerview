@@ -10,7 +10,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/asiacup" />
+            <option value="$PROJECT_DIR$/interfacesample" />
+            <option value="$PROJECT_DIR$/sealedclasssample" />
+            <option value="$PROJECT_DIR$/simpleadapter" />
           </set>
         </option>
       </GradleProjectSettings>
