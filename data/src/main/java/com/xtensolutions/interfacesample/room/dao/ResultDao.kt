@@ -2,7 +2,6 @@ package com.xtensolutions.interfacesample.room.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import androidx.room.RoomWarnings
 import com.xtensolutions.interfacesample.room.entity.MatchResult
 import com.xtensolutions.interfacesample.room.entity.Result
 
