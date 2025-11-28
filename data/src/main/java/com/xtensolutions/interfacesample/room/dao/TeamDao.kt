@@ -11,8 +11,8 @@ import com.xtensolutions.interfacesample.room.entity.Team
  **/
 @Dao
 interface TeamDao : CoreDao<Team> {
-    @Query("SELECT * FROM `Team`")
-    suspend fun fetchAllTeam(): List<Team>
+//    @Query("SELECT * FROM `Team`")
+//    suspend fun fetchAllTeam(): List<Team>
 
     @Query("DELETE FROM `Team`")
     suspend fun clearTable()

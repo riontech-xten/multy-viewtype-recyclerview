@@ -13,9 +13,9 @@ import com.xtensolutions.interfacesample.room.entity.Result
  **/
 @Dao
 interface ResultDao : CoreDao<Result> {
-    @SuppressWarnings(RoomWarnings.QUERY_MISMATCH)
-    @Query("SELECT * FROM `match_result`")
-    suspend fun fetchAllResults(): List<Result>
+//    @SuppressWarnings(RoomWarnings.QUERY_MISMATCH)
+//    @Query("SELECT * FROM `match_result`")
+//    suspend fun fetchAllResults(): List<Result>
 
     @Query(
         "SELECT R.matchId, R.winnerTeamId, R.winMargin, R.teamAScore, R.teamAPlayedOvers, R.teamBScore, "

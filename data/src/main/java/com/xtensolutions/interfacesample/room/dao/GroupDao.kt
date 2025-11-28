@@ -11,8 +11,8 @@ import com.xtensolutions.interfacesample.room.entity.Group
  **/
 @Dao
 interface GroupDao : CoreDao<Group> {
-    @Query("SELECT * FROM `Group`")
-    suspend fun fetchAllGroup(): List<Group>
+//    @Query("SELECT * FROM `Group`")
+//    suspend fun fetchAllGroup(): List<Group>
 
     @Query("DELETE FROM `Group`")
     suspend fun clearTable()

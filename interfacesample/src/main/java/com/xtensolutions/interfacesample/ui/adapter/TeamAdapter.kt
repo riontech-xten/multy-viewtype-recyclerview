@@ -4,10 +4,9 @@ import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.xtensolutions.asiacup.databinding.ListItemRowTeamBinding
-import com.xtensolutions.interfacesample.room.entity.GroupTeamPoints
-import com.xtensolutions.core.model.ListItem
 import com.xtensolutions.asiacup.presentation.viewholder.TeamViewHolder
 import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.interfacesample.room.entity.GroupTeamPoints
 import java.util.LinkedList
 
 /**

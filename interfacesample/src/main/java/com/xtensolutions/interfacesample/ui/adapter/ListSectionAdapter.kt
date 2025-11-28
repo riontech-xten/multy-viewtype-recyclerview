@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.xtensolutions.asiacup.databinding.ListItemRowSectionBinding
-import com.xtensolutions.core.model.ListItem
 import com.xtensolutions.asiacup.presentation.viewholder.SectionViewHolder
 import com.xtensolutions.core.adapter.BaseRecyclerViewAdapter
 import com.xtensolutions.core.listener.ListItemListener

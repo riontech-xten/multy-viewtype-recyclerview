@@ -5,10 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.xtensolutions.asiacup.databinding.ListItemAdBannerBinding
 import com.xtensolutions.asiacup.domain.model.AdBannerModel
-import com.xtensolutions.core.model.ListItem
 import com.xtensolutions.asiacup.presentation.viewholder.AdBannerViewHolder
 import com.xtensolutions.core.listener.ListItemListener
-import com.xtensolutions.interfacesample.listener.ListSection
 import java.util.LinkedList
 
 /**

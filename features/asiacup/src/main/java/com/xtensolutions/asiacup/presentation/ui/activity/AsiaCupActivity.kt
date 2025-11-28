@@ -3,10 +3,7 @@ package com.xtensolutions.asiacup.presentation.ui.activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.github.ajalt.timberkt.Timber
 import com.xtensolutions.asiacup.databinding.ActivityMainBinding
-import java.util.LinkedList
-import kotlin.getValue
 
 /**
  * Created by Vaghela Mithun R. on 28-11-2025 - 20:17.

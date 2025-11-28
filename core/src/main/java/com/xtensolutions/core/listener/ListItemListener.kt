@@ -7,7 +7,7 @@ package com.xtensolutions.core.listener
  **/
 interface ListItemListener {
     fun isHeader(): Boolean
-    fun isFooter(): Boolean {
-        return false
-    }
+//    fun isFooter(): Boolean {
+//        return false
+//    }
 }

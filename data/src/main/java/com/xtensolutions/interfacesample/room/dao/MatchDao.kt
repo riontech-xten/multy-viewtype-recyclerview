@@ -11,8 +11,8 @@ import com.xtensolutions.interfacesample.room.entity.Match
  **/
 @Dao
 interface MatchDao : CoreDao<Match> {
-    @Query("SELECT * FROM `match`")
-    suspend fun fetchAllMatches(): List<Match>
+//    @Query("SELECT * FROM `match`")
+//    suspend fun fetchAllMatches(): List<Match>
 
     @Query("DELETE FROM `match`")
     suspend fun clearTable()

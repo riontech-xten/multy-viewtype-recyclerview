@@ -1,13 +1,8 @@
 package com.xtensolutions.interfacesample.ui.activity
 
-import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.github.ajalt.timberkt.Timber
-import com.xtensolutions.asiacup.databinding.ActivityMainBinding
 import com.xtensolutions.asiacup.presentation.ui.activity.AsiaCupActivity
-import com.xtensolutions.asiacup.presentation.viewmodel.ResultViewModel
 import com.xtensolutions.interfacesample.ui.adapter.MatchAdapter
 import com.xtensolutions.interfacesample.ui.viewmodel.MatchResultViewModel
 import dagger.hilt.android.AndroidEntryPoint

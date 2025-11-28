@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.0"
+agp = "8.13.1"
 kotlin = "2.2.21"
 coreKtx = "1.17.0"
 junit = "4.13.2"
@@ -10,9 +10,10 @@ material = "1.13.0"
 daggerHilt = "2.57.2"
 detekt = "1.23.8"
 ksp = "2.2.21-2.0.4"
-lifecycle = "2.9.4"
-activity = "1.11.0"
-constraintlayout = "2.1.4"
+lifecycle = "2.10.0"
+#activity = "1.12.0"
+#constraintlayout = "2.2.1"
+room = "2.8.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -21,30 +22,30 @@ androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "j
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-room-runtime = { group = "androidx.room", name = "room-runtime", version = "2.8.3" }
-room-ktx = { group = "androidx.room", name = "room-ktx", version = "2.8.3" }
-room-compiler = { group = "androidx.room", name = "room-compiler", version = "2.8.3" }
-room-testing = { group = "androidx.room", name = "room-testing", version = "2.8.3" }
-room-paging = { group = "androidx.room", name = "room-paging", version = "2.8.3" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+#room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+#room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "daggerHilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "daggerHilt" }
-androidx-sqlite = { group = "androidx.sqlite", name = "sqlite-ktx", version = "2.6.1" }
+androidx-sqlite = { group = "androidx.sqlite", name = "sqlite-ktx", version = "2.6.2" }
 timber = { group = "com.github.ajalt", name = "timberkt", version = "1.5.1" }
-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version = "1.11.0" }
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version = "1.12.0" }
 fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version = "1.8.9" }
 lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "lifecycle" }
-androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
-androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+#androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+#androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "daggerHilt" }
 kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize" }
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+#kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 kotlin-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }

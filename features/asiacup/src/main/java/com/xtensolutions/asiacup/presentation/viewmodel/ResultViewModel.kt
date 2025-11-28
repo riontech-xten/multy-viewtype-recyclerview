@@ -3,18 +3,14 @@ package com.xtensolutions.asiacup.presentation.viewmodel
 import androidx.lifecycle.asLiveData
 import com.xtensolutions.asiacup.data.model.GroupType
 import com.xtensolutions.asiacup.domain.model.AdBannerModel
-import com.xtensolutions.core.model.ListItem
 import com.xtensolutions.asiacup.domain.repository.MatchResultRepository
 import com.xtensolutions.asiacup.domain.repository.TeamRepository
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.model.ListItem
 import com.xtensolutions.core.viewmodel.BaseViewModel
 import com.xtensolutions.interfacesample.room.entity.Group
 import com.xtensolutions.interfacesample.room.entity.GroupTeamPoints
 import com.xtensolutions.interfacesample.room.entity.MatchResult
-import dagger.hilt.android.lifecycle.HiltViewModel
 import java.util.LinkedList
-import javax.inject.Inject
-import kotlin.collections.filter
 
 /**
  * Created by Vaghela Mithun R. on 27-10-2025 - 18:21.

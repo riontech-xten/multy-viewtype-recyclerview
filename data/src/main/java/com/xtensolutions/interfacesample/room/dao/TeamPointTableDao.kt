@@ -12,8 +12,8 @@ import com.xtensolutions.interfacesample.room.entity.TeamPointTable
  **/
 @Dao
 interface TeamPointTableDao : CoreDao<TeamPointTable> {
-    @Query("SELECT * FROM `team_point_table`")
-    suspend fun fetchAllTeam(): List<TeamPointTable>
+//    @Query("SELECT * FROM `team_point_table`")
+//    suspend fun fetchAllTeam(): List<TeamPointTable>
 
     @Query(
         "SELECT PT.pointTableId, PT.teamId, T.teamName, T.teamFlagSmall, PT.groupId, PT.playedMatches, PT.wonMatches, "
