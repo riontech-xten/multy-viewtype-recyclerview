@@ -84,7 +84,7 @@
                 style="@style/TextAppearance.MaterialComponents.Caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="VS"
+                android:text="@string/vs"
                 app:layout_constraintBottom_toTopOf="@id/tvMatchStatus"
                 app:layout_constraintEnd_toStartOf="@id/tvTeamB"
                 app:layout_constraintStart_toEndOf="@id/tvTeamA"
