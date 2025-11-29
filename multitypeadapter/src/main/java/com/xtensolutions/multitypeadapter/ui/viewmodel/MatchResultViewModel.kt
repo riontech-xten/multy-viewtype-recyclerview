@@ -1,4 +1,4 @@
-package com.xtensolutions.simpleadapter.ui.viewmodel
+package com.xtensolutions.multitypeadapter.ui.viewmodel
 
 import com.xtensolutions.asiacup.domain.repository.MatchResultRepository
 import com.xtensolutions.asiacup.domain.repository.TeamRepository

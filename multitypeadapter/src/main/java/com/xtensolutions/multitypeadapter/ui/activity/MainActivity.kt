@@ -1,10 +1,10 @@
-package com.xtensolutions.simpleadapter.ui.activity
+package com.xtensolutions.multitypeadapter.ui.activity
 
 import androidx.activity.viewModels
 import com.github.ajalt.timberkt.Timber
 import com.xtensolutions.asiacup.presentation.ui.activity.AsiaCupActivity
-import com.xtensolutions.simpleadapter.ui.adapter.SimpleMatchResultAdapter
-import com.xtensolutions.simpleadapter.ui.viewmodel.MatchResultViewModel
+import com.xtensolutions.multitypeadapter.ui.adapter.MultiTypeAdapter
+import com.xtensolutions.multitypeadapter.ui.viewmodel.MatchResultViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.LinkedList
 
@@ -16,10 +16,10 @@ import java.util.LinkedList
 @AndroidEntryPoint
 class MainActivity : AsiaCupActivity() {
     private val viewModel: MatchResultViewModel by viewModels()
-    private lateinit var adapter: SimpleMatchResultAdapter
+    private lateinit var adapter: MultiTypeAdapter
 
     override fun onViewInitialized() {
-        adapter = SimpleMatchResultAdapter(this, LinkedList())
+        adapter = MultiTypeAdapter(this, LinkedList())
         binding.recyclerView.adapter = adapter
         loadData()
     }

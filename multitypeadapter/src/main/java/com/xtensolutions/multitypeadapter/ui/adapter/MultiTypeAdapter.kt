@@ -1,4 +1,4 @@
-package com.xtensolutions.simpleadapter.ui.adapter
+package com.xtensolutions.multitypeadapter.ui.adapter
 
 import android.content.Context
 import android.view.ViewGroup
@@ -26,7 +26,7 @@ import java.util.LinkedList
  * Email : vaghela.mithun@gmail.com
  * Mob   : +919727206702
  **/
-class SimpleMatchResultAdapter(
+class MultiTypeAdapter(
     context: Context,
     items: LinkedList<ListItem>
 ) : BaseRecyclerViewAdapter<ListItem>(context, items) {

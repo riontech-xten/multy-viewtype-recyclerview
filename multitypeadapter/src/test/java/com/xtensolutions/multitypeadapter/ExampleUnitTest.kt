@@ -1,4 +1,4 @@
-package com.xtensolutions.simpleadapter
+package com.xtensolutions.multitypeadapter
 
 import org.junit.Test
 

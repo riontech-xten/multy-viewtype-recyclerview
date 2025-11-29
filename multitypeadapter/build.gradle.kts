@@ -9,11 +9,11 @@ plugins {
 }
 
 android {
-    namespace = "com.xtensolutions.simpleadapter"
+    namespace = "com.xtensolutions.multitypeadapter"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.xtensolutions.simpleadapter"
+        applicationId = "com.xtensolutions.multitypeadapter"
         minSdk = 26
         targetSdk = 36
         versionCode = 1

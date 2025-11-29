@@ -15,8 +15,8 @@
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/asiacup" />
             <option value="$PROJECT_DIR$/interfacesample" />
+            <option value="$PROJECT_DIR$/multitypeadapter" />
             <option value="$PROJECT_DIR$/sealedclasssample" />
-            <option value="$PROJECT_DIR$/simpleadapter" />
           </set>
         </option>
       </GradleProjectSettings>

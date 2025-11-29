@@ -20,7 +20,7 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MultyViewTypeRecyclerView"
-include(":simpleadapter")
+include(":multitypeadapter")
 include(":interfacesample")
 include(":sealedclasssample")
 include(":data")

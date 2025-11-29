@@ -1,4 +1,4 @@
-package com.xtensolutions.simpleadapter
+package com.xtensolutions.multitypeadapter
 
 import com.xtensolutions.asiacup.T20AsiaCupApp
 import dagger.hilt.android.HiltAndroidApp
