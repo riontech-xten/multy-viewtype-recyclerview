@@ -2,6 +2,7 @@ package com.xtensolutions.interfacesample.room.entity
 
 import android.os.Parcelable
 import androidx.room.Entity
+import com.xtensolutions.core.utils.ITEM_MATCH_TYPE
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -24,7 +25,7 @@ class MatchResult(
     val teamBFlag: Int,
     val groupName: String
 ) : Match(), Parcelable {
-    override fun isHeader(): Boolean = false
+    override fun getItemType(): Int = ITEM_MATCH_TYPE
     fun getMatchVenue(): String = "Match $matchId , $groupName, $venue"
     fun getWinnerDetails(): String = "$winnerTeamId won by $winMargin"
 }

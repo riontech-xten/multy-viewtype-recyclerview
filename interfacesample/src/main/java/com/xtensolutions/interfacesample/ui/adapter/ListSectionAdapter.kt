@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.xtensolutions.asiacup.databinding.ListItemRowSectionBinding
 import com.xtensolutions.asiacup.presentation.viewholder.SectionViewHolder
 import com.xtensolutions.core.adapter.BaseRecyclerViewAdapter
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.listener.ListItemInterface
+import com.xtensolutions.core.utils.ITEM_SECTION_TYPE
 import com.xtensolutions.interfacesample.listener.ListSection
 import java.util.LinkedList
 
@@ -23,13 +24,8 @@ import java.util.LinkedList
  * @param objectsList The list of items to be displayed, which should include instances of [ListSectionAdapter].
  */
 open class ListSectionAdapter(
-    context: Context, objectsList: LinkedList<ListItemListener>
-) : BaseRecyclerViewAdapter<ListItemListener>(context, objectsList) {
-
-    override fun getItemViewType(position: Int): Int {
-        return if (getItem(position) is ListSection) HEADER
-        else super.getItemViewType(position)
-    }
+    context: Context, objectsList: LinkedList<ListItemInterface>
+) : BaseRecyclerViewAdapter<ListItemInterface>(context, objectsList) {
 
     /**
      * Creates a new view holder for the common header section.
@@ -40,7 +36,7 @@ open class ListSectionAdapter(
      * @return A new instance of [com.xtensolutions.asiacup.presentation.viewholder.SectionViewHolder] with the inflated binding.
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return if (viewType == HEADER) {
+        return if (viewType == ITEM_SECTION_TYPE) {
             val binding = ListItemRowSectionBinding.inflate(inflater, parent, false)
             SectionViewHolder(binding)
         } else super.createViewHolder(parent, viewType)
@@ -54,16 +50,12 @@ open class ListSectionAdapter(
      * @param position The position of the item in the adapter.
      */
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is SectionViewHolder && getItemViewType(position) == HEADER) {
+        if (holder is SectionViewHolder && getItemViewType(position) == ITEM_SECTION_TYPE) {
             // use component1() (data class generated accessor) instead of .data to avoid unresolved reference
             val section = (getItem(position) as ListSection).section
             holder.bind(section)
         } else {
             super.bindViewHolder(holder, position)
         }
-    }
-
-    companion object {
-        const val HEADER = 1000
     }
 }

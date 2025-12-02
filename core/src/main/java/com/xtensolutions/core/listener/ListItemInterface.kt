@@ -5,9 +5,6 @@ package com.xtensolutions.core.listener
  * Email : vaghela.mithun@gmail.com
  * Mob   : +919727206702
  **/
-interface ListItemListener {
-    fun isHeader(): Boolean
-//    fun isFooter(): Boolean {
-//        return false
-//    }
+interface ListItemInterface {
+    fun getItemType(): Int
 }

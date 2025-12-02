@@ -3,7 +3,8 @@ package com.xtensolutions.interfacesample.room.entity
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.listener.ListItemInterface
+import com.xtensolutions.core.utils.ITEM_GROUP_TYPE
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -17,7 +18,6 @@ data class Group(
     @PrimaryKey(autoGenerate = true)
     val groupId: Int,
     val groupName: String
-) : Parcelable, ListItemListener {
-
-    override fun isHeader(): Boolean = false
+) : Parcelable, ListItemInterface {
+    override fun getItemType(): Int = ITEM_GROUP_TYPE
 }

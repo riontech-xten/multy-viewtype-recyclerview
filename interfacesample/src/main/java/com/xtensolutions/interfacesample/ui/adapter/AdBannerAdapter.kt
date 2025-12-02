@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.xtensolutions.asiacup.databinding.ListItemAdBannerBinding
 import com.xtensolutions.asiacup.domain.model.AdBannerModel
 import com.xtensolutions.asiacup.presentation.viewholder.AdBannerViewHolder
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.listener.ListItemInterface
+import com.xtensolutions.core.utils.ITEM_AD_BANNER_TYPE
 import java.util.LinkedList
 
 /**
@@ -15,28 +16,19 @@ import java.util.LinkedList
  */
 open class AdBannerAdapter(
     context: Context,
-    objectsList: LinkedList<ListItemListener>
+    objectsList: LinkedList<ListItemInterface>
 ) : ListSectionAdapter(context, objectsList) {
 
-    override fun getItemViewType(position: Int): Int {
-        if (getItem(position) is AdBannerModel) return AD_BANNER_TYPE
-        return super.getItemViewType(position)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        if (viewType == AD_BANNER_TYPE) {
+        if (viewType == ITEM_AD_BANNER_TYPE) {
             val binding = ListItemAdBannerBinding.inflate(inflater, parent, false)
             return AdBannerViewHolder(binding)
         } else return super.onCreateViewHolder(parent, viewType)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is AdBannerViewHolder && getItemViewType(position) == AD_BANNER_TYPE) {
+        if (holder is AdBannerViewHolder && getItemViewType(position) == ITEM_AD_BANNER_TYPE) {
             holder.bind(getItem(position) as AdBannerModel)
         } else super.onBindViewHolder(holder, position)
-    }
-
-    companion object {
-        const val AD_BANNER_TYPE = 5000
     }
 }

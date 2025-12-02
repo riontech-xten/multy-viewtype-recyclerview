@@ -5,7 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.xtensolutions.asiacup.databinding.ListItemRowTeamBinding
 import com.xtensolutions.asiacup.presentation.viewholder.TeamViewHolder
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.listener.ListItemInterface
+import com.xtensolutions.core.utils.ITEM_TEAM_TYPE
 import com.xtensolutions.interfacesample.room.entity.GroupTeamPoints
 import java.util.LinkedList
 
@@ -16,28 +17,19 @@ import java.util.LinkedList
  **/
 open class TeamAdapter(
     context: Context,
-    objectsList: LinkedList<ListItemListener>
+    objectsList: LinkedList<ListItemInterface>
 ) : AdBannerAdapter(context, objectsList) {
 
-    override fun getItemViewType(position: Int): Int {
-        if (getItem(position) is GroupTeamPoints) return TEAM_TYPE
-        return super.getItemViewType(position)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        if (viewType == TEAM_TYPE) {
+        if (viewType == ITEM_TEAM_TYPE) {
             val binding = ListItemRowTeamBinding.inflate(inflater, parent, false)
             return TeamViewHolder(binding)
         } else return super.onCreateViewHolder(parent, viewType)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is TeamViewHolder && getItemViewType(position) == TEAM_TYPE) {
+        if (holder is TeamViewHolder && getItemViewType(position) == ITEM_TEAM_TYPE) {
             holder.bind(getItem(position) as GroupTeamPoints)
         } else super.onBindViewHolder(holder, position)
-    }
-
-    companion object {
-        const val TEAM_TYPE = 4000
     }
 }

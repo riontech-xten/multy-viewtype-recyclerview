@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.xtensolutions.asiacup.databinding.ListItemRowMatchBinding
 import com.xtensolutions.interfacesample.room.entity.MatchResult
 import com.xtensolutions.asiacup.presentation.viewholder.MatchViewHolder
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.listener.ListItemInterface
+import com.xtensolutions.core.utils.ITEM_MATCH_TYPE
 import java.util.LinkedList
 
 /**
@@ -16,17 +17,15 @@ import java.util.LinkedList
  **/
 open class MatchAdapter(
     context: Context,
-    objectsList: LinkedList<ListItemListener>
+    objectsList: LinkedList<ListItemInterface>
 ) : GroupAdapter(context, objectsList) {
 
     override fun getItemViewType(position: Int): Int {
-        val item = getItem(position)
-        if (item is MatchResult) return MATCH_TYPE
-        return super.getItemViewType(position)
+        return getItem(position).getItemType()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        if (viewType == MATCH_TYPE) {
+        if (viewType == ITEM_MATCH_TYPE) {
             val binding = ListItemRowMatchBinding.inflate(inflater, parent, false)
             return MatchViewHolder(binding)
         } else return super.onCreateViewHolder(parent, viewType)
@@ -34,12 +33,8 @@ open class MatchAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = getItem(position)
-        if (holder is MatchViewHolder && getItemViewType(position) == MATCH_TYPE) {
+        if (holder is MatchViewHolder && getItemViewType(position) == ITEM_MATCH_TYPE) {
             holder.bind(item as MatchResult)
         } else super.onBindViewHolder(holder, position)
-    }
-
-    companion object {
-        const val MATCH_TYPE = 2000
     }
 }

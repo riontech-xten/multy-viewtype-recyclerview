@@ -5,7 +5,7 @@ import com.xtensolutions.asiacup.domain.model.AdBannerModel
 import com.xtensolutions.asiacup.domain.repository.MatchResultRepository
 import com.xtensolutions.asiacup.domain.repository.TeamRepository
 import com.xtensolutions.asiacup.presentation.viewmodel.ResultViewModel
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.listener.ListItemInterface
 import com.xtensolutions.interfacesample.listener.ListSection
 import com.xtensolutions.interfacesample.room.entity.Group
 import com.xtensolutions.interfacesample.room.entity.GroupTeamPoints
@@ -34,8 +34,8 @@ class MatchResultViewModel @Inject constructor(
     fun buildInterfaceSampleList(
         matches: List<MatchResult>,
         teams: List<GroupTeamPoints>
-    ): LinkedList<ListItemListener> {
-        return LinkedList<ListItemListener>().apply {
+    ): LinkedList<ListItemInterface> {
+        return LinkedList<ListItemInterface>().apply {
             add(ListSection("Matches"))
             addAll(matches)
 

@@ -1,6 +1,7 @@
 package com.xtensolutions.interfacesample.listener
 
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.listener.ListItemInterface
+import com.xtensolutions.core.utils.ITEM_SECTION_TYPE
 
 /**
  * Created by Vaghela Mithun R. on 09-10-2025 - 19:50.
@@ -9,6 +10,6 @@ import com.xtensolutions.core.listener.ListItemListener
  **/
 data class ListSection(
     val section: String
-) : ListItemListener {
-    override fun isHeader(): Boolean = true
+) : ListItemInterface {
+    override fun getItemType(): Int = ITEM_SECTION_TYPE
 }

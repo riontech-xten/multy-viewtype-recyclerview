@@ -5,7 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.xtensolutions.asiacup.databinding.ListItemRowGroupBinding
 import com.xtensolutions.asiacup.presentation.viewholder.GroupViewHolder
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.listener.ListItemInterface
+import com.xtensolutions.core.utils.ITEM_GROUP_TYPE
 import com.xtensolutions.interfacesample.room.entity.Group
 import java.util.LinkedList
 
@@ -16,28 +17,19 @@ import java.util.LinkedList
  **/
 open class GroupAdapter(
     context: Context,
-    objectsList: LinkedList<ListItemListener>
+    objectsList: LinkedList<ListItemInterface>
 ) : TeamAdapter(context, objectsList) {
 
-    override fun getItemViewType(position: Int): Int {
-        if (getItem(position) is Group) return GROUP_TYPE
-        return super.getItemViewType(position)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        if (viewType == GROUP_TYPE) {
+        if (viewType == ITEM_GROUP_TYPE) {
             val binding = ListItemRowGroupBinding.inflate(inflater, parent, false)
             return GroupViewHolder(binding)
         } else return super.onCreateViewHolder(parent, viewType)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (holder is GroupViewHolder && getItemViewType(position) == GROUP_TYPE) {
+        if (holder is GroupViewHolder && getItemViewType(position) == ITEM_GROUP_TYPE) {
             holder.bind(getItem(position) as Group)
         } else super.onBindViewHolder(holder, position)
-    }
-
-    companion object {
-        const val GROUP_TYPE = 3000
     }
 }

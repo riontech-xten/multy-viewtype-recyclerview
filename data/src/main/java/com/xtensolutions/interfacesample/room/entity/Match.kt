@@ -3,7 +3,8 @@ package com.xtensolutions.interfacesample.room.entity
 import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.xtensolutions.core.listener.ListItemListener
+import com.xtensolutions.core.listener.ListItemInterface
+import com.xtensolutions.core.utils.ITEM_MATCH_TYPE
 import kotlinx.parcelize.Parcelize
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -29,8 +30,8 @@ open class Match(
     var matchStatus: String = "Completed",
     var isFinal: Boolean = false,
     var venue: String = "Dubai International Cricket Stadium"
-) : Parcelable, ListItemListener {
-    override fun isHeader(): Boolean = false
+) : Parcelable, ListItemInterface {
+    override fun getItemType(): Int = ITEM_MATCH_TYPE
 
     fun matchDateTime(): String {
         val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH)
