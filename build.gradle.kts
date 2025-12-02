@@ -9,6 +9,7 @@ plugins {
     alias(libs.plugins.dagger.hilt) apply false
     alias(libs.plugins.kotlin.kapt) apply false
     alias(libs.plugins.detekt) apply false
+    alias(libs.plugins.android.library) apply false
 }
 
 // Add Detekt configuration to point to our config file

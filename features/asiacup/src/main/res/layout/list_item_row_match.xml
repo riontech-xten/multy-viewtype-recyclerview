@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.xtensolutions.interfacesample.room.entity.MatchResult" />
+
+        <import type="com.xtensolutions.asiacup.presentation.ui.binding.IconPosition" />
+
+        <variable
+            name="match"
+            type="com.xtensolutions.interfacesample.room.entity.MatchResult" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/card_padding"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/card_padding">
+
+            <TextView
+                android:id="@+id/tvStadium"
+                style="@style/App.Theme.TextAppearance.Small.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{match.matchVenue}"
+                android:textColor="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1st Match, Group A, Zayed Cricket Stadium, Abu Dhabi" />
+
+            <TextView
+                android:id="@+id/tvTeamA"
+                style="@style/App.Theme.TextAppearance.Large.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:iconPosition="@{IconPosition.TOP}"
+                android:resourceIcon="@{match.teamAFlag}"
+                android:text="@{match.teamA}"
+                app:drawableTopCompat="@drawable/flag_ind"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvStadium"
+                tools:text="IND" />
+
+            <TextView
+                android:id="@+id/tvTeamAScore"
+                style="@style/App.Theme.TextAppearance.Large.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/card_padding"
+                android:text="@{match.teamAScore}"
+                app:layout_constraintBottom_toTopOf="@id/tvTeamAOvers"
+                app:layout_constraintEnd_toStartOf="@id/lblMatchVs"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="150/4" />
+
+            <TextView
+                android:id="@+id/tvTeamAOvers"
+                style="@style/App.Theme.TextAppearance.Medium.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`(`+String.valueOf(match.teamAPlayedOvers)+`)`}"
+                android:textColor="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tvTeamAScore"
+                app:layout_constraintStart_toStartOf="@id/tvTeamAScore"
+                app:layout_constraintTop_toBottomOf="@id/tvTeamAScore"
+                tools:text="(0.0)" />
+
+            <TextView
+                android:id="@+id/lblMatchVs"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vs"
+                app:layout_constraintBottom_toTopOf="@id/tvMatchStatus"
+                app:layout_constraintEnd_toStartOf="@id/tvTeamB"
+                app:layout_constraintStart_toEndOf="@id/tvTeamA"
+                app:layout_constraintTop_toBottomOf="@id/tvStadium" />
+
+            <TextView
+                android:id="@+id/tvTeamB"
+                style="@style/App.Theme.TextAppearance.Large.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:iconPosition="@{IconPosition.TOP}"
+                android:resourceIcon="@{match.teamBFlag}"
+                android:text="@{match.teamB}"
+                app:drawableTopCompat="@drawable/flag_pak"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvStadium"
+                tools:text="PAK" />
+
+            <TextView
+                android:id="@+id/tvTeamBScore"
+                style="@style/App.Theme.TextAppearance.Large.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_padding"
+                android:text="@{match.teamBScore}"
+                app:layout_constraintBottom_toTopOf="@id/tvTeamBOvers"
+                app:layout_constraintStart_toEndOf="@id/lblMatchVs"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="146/10" />
+
+            <TextView
+                android:id="@+id/tvTeamBOvers"
+                style="@style/App.Theme.TextAppearance.Medium.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`(`+String.valueOf(match.teamBPlayedOvers)+`)`}"
+                android:textColor="@color/gray"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tvTeamBScore"
+                app:layout_constraintStart_toStartOf="@id/tvTeamBScore"
+                app:layout_constraintTop_toBottomOf="@id/tvTeamBScore"
+                tools:text="(0.0)" />
+
+            <TextView
+                android:id="@+id/tvMatchDate"
+                style="@style/App.Theme.TextAppearance.Medium.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/list_item_margin"
+                android:text="@{match.matchDateTime()}"
+                app:layout_constraintEnd_toStartOf="@id/tvTeamB"
+                app:layout_constraintStart_toEndOf="@id/tvTeamA"
+                app:layout_constraintTop_toBottomOf="@id/tvStadium" />
+
+            <TextView
+                android:id="@+id/tvMatchStatus"
+                style="@style/App.Theme.TextAppearance.Small.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/list_item_margin"
+                android:text="@{match.winnerDetails}"
+                android:textColor="@color/blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTeamA" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

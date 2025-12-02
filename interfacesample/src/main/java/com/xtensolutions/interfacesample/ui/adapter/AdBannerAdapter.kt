@@ -1,0 +1,34 @@
+package com.xtensolutions.interfacesample.ui.adapter
+
+import android.content.Context
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.xtensolutions.asiacup.databinding.ListItemAdBannerBinding
+import com.xtensolutions.asiacup.domain.model.AdBannerModel
+import com.xtensolutions.asiacup.presentation.viewholder.AdBannerViewHolder
+import com.xtensolutions.core.listener.ListItemInterface
+import com.xtensolutions.core.utils.ITEM_AD_BANNER_TYPE
+import java.util.LinkedList
+
+/**
+ * Adapter specifically for AdBanner rows. Extends the same adapter layering as other adapters
+ * (extends GroupAdapter) so it can be composed in the same way.
+ */
+open class AdBannerAdapter(
+    context: Context,
+    objectsList: LinkedList<ListItemInterface>
+) : ListSectionAdapter(context, objectsList) {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        if (viewType == ITEM_AD_BANNER_TYPE) {
+            val binding = ListItemAdBannerBinding.inflate(inflater, parent, false)
+            return AdBannerViewHolder(binding)
+        } else return super.onCreateViewHolder(parent, viewType)
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (holder is AdBannerViewHolder && getItemViewType(position) == ITEM_AD_BANNER_TYPE) {
+            holder.bind(getItem(position) as AdBannerModel)
+        } else super.onBindViewHolder(holder, position)
+    }
+}

@@ -20,4 +20,10 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MultyViewTypeRecyclerView"
-include(":app")
+include(":multitypeadapter")
+include(":interfacesample")
+include(":sealedclasssample")
+include(":data")
+include(":core")
+include(":features")
+include(":features:asiacup")
